@@ -10,7 +10,7 @@
 #pragma newdecls required
 
 #define PLUGIN_NAME "Anti Team Flash"
-#define PLUGIN_VERSION "1.0.6"
+#define PLUGIN_VERSION "1.0.0"
 
 public Plugin myinfo = {
     name = PLUGIN_NAME,
@@ -33,10 +33,10 @@ public void OnPluginStart()
     HookEvent("player_blind", Event_PlayerBlindPost, EventHookMode_Post);
     
     LoadTranslations("common.phrases");
-    AutoExecConfig(true, "camantiteamflash");
     
     // Log plugin start
-    LogMessage("Anti-TeamFlash plugin loaded. Version: %s", PLUGIN_VERSION);
+    LogMessage("Plugin %s v%s loaded", PLUGIN_NAME, PLUGIN_VERSION);
+    
 }
 
 public Action Event_FlashbangDetonate(Event event, const char[] name, bool dontBroadcast)
